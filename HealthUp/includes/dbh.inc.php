@@ -2,7 +2,7 @@
 
 $dbServername = "localhost"; //Change localhost to server hosted
 $dbUsername = "root";
-$dbPassword = "~~~4five";
+$dbPassword = "";
 $dbName = "loginsystem";
 
 $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
