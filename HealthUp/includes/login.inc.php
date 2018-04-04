@@ -15,26 +15,30 @@ if (isset($_POST['submit'])) {
 		header("Location: ../index.php?login=empty");
 		exit();
 	} else {
-		$sql = "SELECT * FROM users WHERE user_uid='$uid' OR user_email='$uid'";
+		$sql = "SELECT * FROM user WHERE username='$uid'";
 		$result = mysqli_query($conn, $sql);
 		$resultCheck = mysqli_num_rows($result);
 		if ($resultCheck < 1) {
-			header("Location: ../index.php?login=error");
+			header("Location: ../index.php?login=error2");
 			exit();
 		} else {
 			if ($row = mysqli_fetch_assoc($result)) {
 				//De-hashing the password
-				$hashedPwdCheck = password_verify($pwd, $row['user_pwd']);
+				$hashedPwdCheck = password_verify($pwd, $row['Password']);
 				if ($hashedPwdCheck == false) {
-					header("Location: ../index.php?login=error");
+					header("Location: ../index.php?login=error3");
 					exit();
 				} elseif ($hashedPwdCheck == true) {
 					//Log in the user here
-					$_SESSION['u_id'] = $row['user_id'];
-					$_SESSION['u_first'] = $row['user_first'];
-					$_SESSION['u_last'] = $row['user_last'];
-					$_SESSION['u_email'] = $row['user_email'];
-					$_SESSION['u_uid'] = $row['user_uid'];
+					$_SESSION['u_id'] = $row['ID'];
+					$_SESSION['u_first'] = $row['Firstname'];
+					$_SESSION['u_last'] = $row['Lastname'];
+					$_SESSION['u_email'] = $row['Email'];
+					$_SESSION['u_uid'] = $row['Username'];
+					$_SESSION['u_cweight'] = $row['CurrentWeight'];
+					$_SESSION['u_gweight'] = $row['GoalWeight'];
+					$_SESSION['u_height'] = $row['Height'];
+					$_SESSION['u_bodyfat'] = $row['BodyFat'];
 					header("Location: ../index.php?login=success");
 					exit();
 				}

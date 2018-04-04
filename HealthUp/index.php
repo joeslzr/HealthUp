@@ -9,7 +9,7 @@
                 echo '<h2>Welcome</h2>';
             }
             else{
-                echo '<h2>Please Login</h2>';
+                echo '<h2>Please Login or Signup</h2>';
             }
         ?>
     </div>
