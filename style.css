@@ -146,6 +146,10 @@ header nav img{
     padding: 5px;
 }
 
+tr:first-child {
+  font-weight: bold
+}
+
 header .nav-login{
     float: right;
 }
@@ -203,6 +207,7 @@ header .nav-login a{
 
 .main-container{
     padding-top: 40px;
+    text-align: center;
 }
 
 .main-container h2{
@@ -213,11 +218,79 @@ header .nav-login a{
     text-align: center;
 }
 
+.main-container select{
+	display: block;
+	margin: 0 auto;
+    font-family:  arial;
+    font-size: 15px;
+    color: #111;
+    line-height: 50px;
+	align: center;
+}
+
+.main-container table{
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.main-container td{
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.main-container input[type=submit]{
+	display: block;
+	margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-family:  arial;
+    font-size: 15px;
+    color: #111;
+    line-height: 20px;
+	align: center;
+}
+
+
 .main-container img{
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+
+/*nutrition_plan.php*/
+
+.nutritionplan-form {
+    width: 400px;
+    margin: 0 auto;
+    padding-top: 30px;    
+}
+
+.nutritionplan-form input{
+    width: 50%;
+    height: 40px;
+    padding: 0px 5%;
+    margin-bottom: 4px;
+    border: none;
+    background-color: #fff;
+    font-family:  arial;
+    font-size: 16px;
+    color: #111;
+    line-height: 40px;
+}
+
+.nutritionplan-form button{
+    display: block;
+    margin: 0 auto;
+    width: 30%;
+    height: 40px;
+    border: none;
+    background-color: #222;
+    font-family:  arial;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
 }
 
 /*signup.php*/
